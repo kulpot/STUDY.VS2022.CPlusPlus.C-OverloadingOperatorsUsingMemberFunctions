@@ -18,12 +18,14 @@ class Vector		// class is defualt to private
 	int y;
 public:			// constructor public 
 	Vector(int x = 0, int y = 0) : x(x), y(y) {}
-	friend Vector operator+(const Vector& left, const Vector& right);	// operator+ is not a member func
+	//friend Vector operator+(const Vector& left, const Vector& right);	// operator+ is not a member func
 	friend std::ostream& operator<<(std::ostream& stream, const Vector& right);
-	void whatever()	// this func(which is a member func) get to access the private members of class Vector
-	{
-		x = 23423;		
-	}
+	//void whatever()	// this func(which is a member func) get to access the private members of class Vector
+	//{
+	//	x = 23423;		
+	//}
+
+
 };
 
 void main()
