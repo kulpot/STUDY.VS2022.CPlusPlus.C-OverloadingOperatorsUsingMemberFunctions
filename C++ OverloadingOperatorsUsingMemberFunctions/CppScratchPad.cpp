@@ -25,11 +25,15 @@ public:			// constructor public
 	//	x = 23423;		
 	//}
 
-	Vector operator+(const Vector& left, const Vector& right)	//function header
+	Vector operator+(const Vector& right)	//operator+ member function requires "this" in left operand
 	{
 		Vector ret;
-		ret.x = left.x + right.x;
-		ret.y = left.y + right.y;
+		//ret.x = left.x + right.x;
+		//ret.y = left.y + right.y;
+		//ret.x = this->x + right.x;		// left operand becomes this-> operand
+		//ret.y = this->y + right.y;
+		ret.x = x + right.x;		// Redundancy:this-> operand removed still works because of "Vector operator+(const Vector& right)" is already a member func
+		ret.y = y + right.y;
 		return ret;
 	}
 };
