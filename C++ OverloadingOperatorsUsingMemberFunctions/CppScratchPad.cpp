@@ -2,8 +2,8 @@
 using std::cout;	// cout: is an output stream, sending data out the console
 using std::endl;
 
-// ------------------- C++ Class Friends ----------------------------------------------------------
-//ref link:https://www.youtube.com/watch?v=7N4qcBcLTKU&list=PLRwVmtr-pp077ESC0tAC331LxLaDa5A57&index=4
+// ------------------ C++ OverloadingOperatorsUsingMemberFunctions --------------------------------
+//ref link:https://www.youtube.com/watch?v=uwgF7mJUXkY&list=PLRwVmtr-pp077ESC0tAC331LxLaDa5A57&index=5
 
 // Class Friends - like half public that can be complicated, helps in incapsulation, just like C++ friend tool, C#'s goto is not popular but useful.
 //(&)Ampersigns in ex.(Vector& right) are passing by reference for RAM(4bytes of floats) ,not using (&) reference will make RAM copy float to (8bytes of float) 
@@ -11,16 +11,16 @@ using std::endl;
 // cout: is an output stream, sending data out the console
 
 class Vector		// class is defualt to private
-//struct Vector		// algebra/trigonometry knowledge required	// ideally this must be .h file or .cpp file
+	//struct Vector		// algebra/trigonometry knowledge required	// ideally this must be .h file or .cpp file
 {
-//public:	//solution for making class public inside a scope of a class ex. its datamembers
+	//public:	//solution for making class public inside a scope of a class ex. its datamembers
 	int x;			// Notice:float is default type for vector
 	int y;
 public:			// constructor public 
 	Vector(int x = 0, int y = 0) : x(x), y(y) {}
 	// friend - can make private data members be accessable outside the scope of a class
-	friend Vector operator+(const Vector& left, const Vector& right);			
-	friend std::ostream& operator<<(std::ostream& stream, const Vector& right); 
+	friend Vector operator+(const Vector& left, const Vector& right);
+	friend std::ostream& operator<<(std::ostream& stream, const Vector& right);
 	//friend class Cow;
 };
 
@@ -44,7 +44,7 @@ public:			// constructor public
 void main()
 {
 	Vector first(1, 2), second(3, 4);
-	Vector result = first + second;		
+	Vector result = first + second;
 	cout << first << " + " << second << " = " << result << endl;
 }
 
@@ -68,6 +68,92 @@ std::ostream& operator<<(std::ostream& stream, const Vector& right)	//function h
 	cout << "{" << right.x << ", " << right.y << "}";
 	return stream;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------- C++ Class Friends ----------------------------------------------------------
+//ref link:https://www.youtube.com/watch?v=7N4qcBcLTKU&list=PLRwVmtr-pp077ESC0tAC331LxLaDa5A57&index=4
+
+// Class Friends - like half public that can be complicated, helps in incapsulation, just like C++ friend tool, C#'s goto is not popular but useful.
+//(&)Ampersigns in ex.(Vector& right) are passing by reference for RAM(4bytes of floats) ,not using (&) reference will make RAM copy float to (8bytes of float) 
+// << is called stream insertion operator
+// cout: is an output stream, sending data out the console
+
+//class Vector		// class is defualt to private
+////struct Vector		// algebra/trigonometry knowledge required	// ideally this must be .h file or .cpp file
+//{
+////public:	//solution for making class public inside a scope of a class ex. its datamembers
+//	int x;			// Notice:float is default type for vector
+//	int y;
+//public:			// constructor public 
+//	Vector(int x = 0, int y = 0) : x(x), y(y) {}
+//	// friend - can make private data members be accessable outside the scope of a class
+//	friend Vector operator+(const Vector& left, const Vector& right);			
+//	friend std::ostream& operator<<(std::ostream& stream, const Vector& right); 
+//	//friend class Cow;
+//};
+//
+////Vector operator+(const Vector& left, const Vector& right);				//declaration
+////std::ostream& operator<<(std::ostream& stream, const Vector& right); 	//declaration
+//
+////Vector operator+(const Vector& left, const Vector& right)
+////{
+////	Vector ret;
+////	ret.x = left.x + right.x;
+////	ret.y = left.y + right.y;
+////	return ret;
+////}
+//
+////std::ostream& operator<<(std::ostream& stream, const Vector& right)
+////{
+////	cout << "{" << right.x << ", " << right.y << "}";	
+////	return stream;	
+////}
+//
+//void main()
+//{
+//	Vector first(1, 2), second(3, 4);
+//	Vector result = first + second;		
+//	cout << first << " + " << second << " = " << result << endl;
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+//Vector operator+(const Vector& left, const Vector& right)	//function header
+//{
+//	Vector ret;
+//	ret.x = left.x + right.x;
+//	ret.y = left.y + right.y;
+//	return ret;
+//}
+//
+//std::ostream& operator<<(std::ostream& stream, const Vector& right)	//function header or leftshift function
+//{
+//	cout << "{" << right.x << ", " << right.y << "}";
+//	return stream;
+//}
 
 
 
