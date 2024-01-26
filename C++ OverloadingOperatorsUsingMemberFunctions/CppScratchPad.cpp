@@ -25,7 +25,13 @@ public:			// constructor public
 	//	x = 23423;		
 	//}
 
-
+	Vector operator+(const Vector& left, const Vector& right)	//function header
+	{
+		Vector ret;
+		ret.x = left.x + right.x;
+		ret.y = left.y + right.y;
+		return ret;
+	}
 };
 
 void main()
