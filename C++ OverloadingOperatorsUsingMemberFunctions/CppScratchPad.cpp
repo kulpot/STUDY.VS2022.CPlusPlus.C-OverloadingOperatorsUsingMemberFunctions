@@ -18,28 +18,9 @@ class Vector		// class is defualt to private
 	int y;
 public:			// constructor public 
 	Vector(int x = 0, int y = 0) : x(x), y(y) {}
-	// friend - can make private data members be accessable outside the scope of a class
 	friend Vector operator+(const Vector& left, const Vector& right);
 	friend std::ostream& operator<<(std::ostream& stream, const Vector& right);
-	//friend class Cow;
 };
-
-//Vector operator+(const Vector& left, const Vector& right);				//declaration
-//std::ostream& operator<<(std::ostream& stream, const Vector& right); 	//declaration
-
-//Vector operator+(const Vector& left, const Vector& right)
-//{
-//	Vector ret;
-//	ret.x = left.x + right.x;
-//	ret.y = left.y + right.y;
-//	return ret;
-//}
-
-//std::ostream& operator<<(std::ostream& stream, const Vector& right)
-//{
-//	cout << "{" << right.x << ", " << right.y << "}";	
-//	return stream;	
-//}
 
 void main()
 {
