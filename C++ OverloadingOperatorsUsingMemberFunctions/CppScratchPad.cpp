@@ -40,13 +40,13 @@ void main()
 
 
 
-Vector operator+(const Vector& left, const Vector& right)	//function header
-{
-	Vector ret;
-	ret.x = left.x + right.x;
-	ret.y = left.y + right.y;
-	return ret;
-}
+//Vector operator+(const Vector& left, const Vector& right)	//function header
+//{
+//	Vector ret;
+//	ret.x = left.x + right.x;
+//	ret.y = left.y + right.y;
+//	return ret;
+//}
 
 std::ostream& operator<<(std::ostream& stream, const Vector& right)	//function header or leftshift function
 {
